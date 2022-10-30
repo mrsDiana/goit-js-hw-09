@@ -22,3 +22,6 @@ function getRandomHexColor() {
 function colorChange() {
   return (body.style.backgroundColor = getRandomHexColor());
 }
+
+
+
