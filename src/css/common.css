@@ -27,3 +27,18 @@ img {
   font-size: 20px;
   cursor: pointer;
 }
+
+.timer {
+  margin-top: 20px;
+  display: flex;
+}
+.field:not(:last-child) {
+  
+  margin-right: 20px;
+}
+.value {
+  font-size: larger;
+  display: block;
+  text-align: center;
+  color: red;
+}
