@@ -2,6 +2,7 @@
 import flatpickr from "flatpickr";
 // Додатковий імпорт стилів
 import "flatpickr/dist/flatpickr.min.css";
+import Notiflix from 'notiflix';
 
 
 const inputData = document.querySelector('#datetime-picker');
@@ -47,7 +48,7 @@ const options = {
   function checkVerificateDate(selectedDates) {
     if (selectedDates[0] - Date.now()  <= 0) {
       startData.setAttribute('disabled', " "); 
-      return  window.alert("Please choose a date in the future");
+      return Notiflix.Notify.warning('Please choose a date in the future');
     } 
       startData.removeAttribute('disabled', '');
   }
