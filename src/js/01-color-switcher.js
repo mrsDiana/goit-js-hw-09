@@ -5,14 +5,12 @@ let colorId = null;
 
 startBtn.addEventListener('click', () => {
   colorId = setInterval(colorChange, 1000);
-  startBtn.setAttribute('disabled', '');
-  stopBtn.removeAttribute('disabled', '');
+  disabled (startBtn, stopBtn);
 });
 
 stopBtn.addEventListener('click', () => {
   clearInterval(colorId);
-  stopBtn.setAttribute('disabled', '');
-  startBtn.removeAttribute('disabled', '');
+  disabled (stopBtn, startBtn);
 });
 
 function getRandomHexColor() {
@@ -23,5 +21,8 @@ function colorChange() {
   return (body.style.backgroundColor = getRandomHexColor());
 }
 
-
+function disabled (btnSet, btnRemove) {
+  btnSet.setAttribute('disabled', '');
+  btnRemove.removeAttribute('disabled', '');
+}
 

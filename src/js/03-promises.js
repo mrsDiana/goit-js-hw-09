@@ -17,6 +17,7 @@ function handelSubmit(event) {
         Notiflix.Notify.success(
           `✅ Fulfilled promise ${position} in ${delayCounter}ms`
         );
+        return { position, delayCounter };
       })
       .catch(({ position, delayCounter }) => {
         Notiflix.Notify.failure(
@@ -32,10 +33,10 @@ function createPromise(position, delayCounter) {
   const promise = new Promise((resolve, reject) => {
     setTimeout(() => {
       if (shouldResolve) {
-        resolve(`✅ Fulfilled promise ${position} in ${delayCounter}ms`);
+        resolve({ position, delayCounter });
         // Fulfill
       } else {
-        reject(`❌ Rejected promise ${position} in ${delayCounter}ms`); // Reject
+        reject({ position, delayCounter }); // Reject
       }
     }, delayCounter);
   });
