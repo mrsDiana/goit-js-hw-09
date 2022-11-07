@@ -11,7 +11,7 @@ function handelSubmit(event) {
   } = event.currentTarget;
   let delayCounter = Number(delay.value);
 
-  for (let position = 0; position < amount.value; position += 1) {
+  for (let position = 1; position <= amount.value; position += 1) {
     createPromise(position, delayCounter)
       .then(({ position, delayCounter }) => {
         Notiflix.Notify.success(
